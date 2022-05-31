@@ -13,7 +13,7 @@
 
 #include "mcp23s08.h"
 
-static const int MCP_SPI_HOST = 2;
+static const int MCP_SPI_HOST = 3;
 static const int CLOCK_MHZ = 10;
 static const int MISO = 19;
 static const int MOSI = 23;
@@ -48,7 +48,6 @@ esp_err_t spi_initialize(spi_host_device_t spi_host, int clock_mhz, int miso, in
         .sclk_io_num = sclk,
         .quadwp_io_num = -1,
         .quadhd_io_num = -1,
-        .max_transfer_sz = 32,
     };
 
     ret = spi_bus_initialize(spi_host, &bus_cfg, SPI_DMA_CH_AUTO);
